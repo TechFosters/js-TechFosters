@@ -30,35 +30,91 @@ console.log(favcrickters, typeof favcrickters)
 
 //array methods
 
-//push method
-console.log(myArr.push(12)) //returns the length of the array
+//1. push method
+console.log(myArr.push(12)) //Appends new elements to the end of an array, and returns the new length of the array.
 console.log(myArr)
-//pop method
-console.log(myArr.pop()) //returns the element that is removed
-console.log(myArr)
-//unshift method
-console.log(myArr.unshift(0)) //returns the length of the array
+
+//2. unshift method
+console.log(myArr.unshift(0)) //Inserts new elements at the start of an array, and returns the new length of the array.
 console.log(myArr) //0 gets added at the 0th index
-//shift method
-console.log(myArr.shift()) // removes teh first element and returns it
+
+//3. pop method
+console.log(myArr.pop()) //removes the last element from an array and returns it. If the array is empty, undefined is returned and the array is not modified.
+
+//4. shift method
+console.log(myArr.shift()) // removes the first element from an array and returns it. If the array is empty, undefined is returned and the array is not modified.
 console.log(myArr)
-//index of
+
+
+//5. index of
 console.log(myArr.indexOf(9))//Returns the index of the first occurrence of a value in an array, or -1 if it is not present.
-//.join
+
+//6. charAt
+console.log(myArr.at(3)) //Returns the item located at the specified index.
+
+//7. includes
+console.log(myArr.includes(9)) //Determines whether an array includes a certain element, returning true or false as appropriate.
+console.log(myArr.includes(2))
+
+//8.join
 const newArr = myArr.join() //returns the array(of type string) with separators 
 console.log(myArr, typeof(myArr), newArr, typeof(newArr))
-//slice, splice
-const sliced = myArr.slice(1,3)
-console.log(myArr)
-console.log(sliced, `this is a sliced array`)
-console.log(myArr)
-const spliced = myArr.splice(1,3)
-console.log(myArr)
-console.log(spliced, `this is a spliced array`)
+
+//9. splice
+
+//syntax: array.splice(start, deleteCount, item1, item2, ...);
+//9.1 ++++ Deleting Elements using splice()
+const ogArray = [99, 45, 78, 89, 98, 12 , 1, 0, -1, -45, -33] 
+const removed = ogArray.splice(2, 4)
+console.log(ogArray) // it's been modified to [99, 45, 1, 0, -1, -45, -33]
+console.log(removed) // it contains deleted elements [78, 89, 98, 12]
+
+//9.2 Adding elements using splice
+ogArray.splice(3,0,100,-200) // array.splice(start, deleteCount, item1, item2, ...); starting from 3rd index, delete nothing(0) yet add 100, -200
+console.log(ogArray)
+
+//9.3 Replacing elements using splice
+ogArray.splice(2,2, 500,600) //starting from index 2, delete 2 elements and add 500, 600 respectively
+console.log(ogArray)
+
+//9.4 Clearing array using splice
+ogArray.splice(0,ogArray.length)
+console.log(ogArray)
+
+//9.5 Uisng Negative Index
+ogArray.splice(-1,2)
+console.log(ogArray) //Agar arr = [] likhte, to reference change ho jata, jo const me allowed nahi hai.
+
+//Practice Question
+const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+arr.splice(3, 2, 99, 100); 
+arr.splice(-4, 1, 200, 300); 
+arr.splice(1, 0, 500);
+arr.splice(-2, 2, 400, 500, 600);
+
+console.log(arr);
+
+//10. slice() 
+
+const slicedArr = arr.slice(3,7) //The end index of the specified portion of the array. This is exclusive of the element at the index 'end'. If end is undefined, then the slice extends to the end of the array.
+console.log(slicedArr, arr)
+//++++++++++++++++++++++++++++++++++++++++++
+//let's learn the iteration(loop)
+/*
+step1: variable leke aao
+step2: limit btao 
+step3: increment/decrement
+*/
+let fruits = new Array('Apple', 'Banana', 'Cherry', 'DragonFruit', 'ElderBerry', 'Figs');
+
+for(f = 0; f < fruits.length; f++){
+    console.log(`fruits at index ${f}: ${fruits[f]}`)
+}; 
 
 
-myArr.splice(0,3,1,6)
-console.log(myArr)
+
+
 
 
 
